@@ -1,22 +1,10 @@
-/*
- |  tail.DateTime - A pure, vanilla JavaScript DateTime Picker
- |  @author        SamBrishes <https://github.com/pytesNET/tail.DateTime/>
- |                 MrGuiseppe <https://github.com/MrGuiseppe/pureJSCalendar/>
- |  @version       0.3.4 - Alpha
- |
- |  @license       X11 / MIT License
- |  @copyright     Copyright Â© 2018 - SamBrishes, pytesNET <pytes@gmx.net>
- |                 Copyright Â© 2018 - MrGuiseppe <https://github.com/MrGuiseppe>
- */
-
-/* @start tail.DateTime */
 .tail-datetime-calendar {
   width: 100%;
   height: 500px;
   margin: 15px;
   padding: 0;
   display: block;
-  overflow: hidden !important;
+  overflow: hidden;
   position: absolute;
   border-collapse: separate;
   font-family: 'Open Sans', Calibri, Arial, sans-serif;
@@ -25,7 +13,6 @@
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3125);
   border-radius: 3px;
   -webkit-border-radius: 3px;
-  margin-left: 0;
 }
 .tail-datetime-calendar:after {
   clear: both;
@@ -40,10 +27,9 @@
 }
 .tail-datetime-calendar .calendar-navi {
   width: 100%;
-  height: 80px;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: table;
   border-spacing: 0;
   border-collapse: separate;
   background-color: #cd283c;
@@ -52,45 +38,31 @@
 }
 .tail-datetime-calendar .calendar-navi span {
   cursor: pointer;
-  color: rgb(0, 0, 0);
+  color: #fff;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 16px;
+  display: table-cell;
+  font-size: 14px;
   text-align: center;
+  line-height: 30px;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.15);
   background-repeat: no-repeat;
   background-position: center center;
 }
 .tail-datetime-calendar .calendar-navi span:first-child,
 .tail-datetime-calendar .calendar-navi span:last-child {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #f8f8f8;
-  background-repeat: no-repeat;
-  background-position: center center;
-
-  /* padding: 5px; */
+  width: 35px;
+  padding: 0 0 5px 0;
   font-size: 22px;
 }
 .tail-datetime-calendar .calendar-navi span:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
 .tail-datetime-calendar .calendar-navi span.button-prev {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(/src/assets/left.svg);
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgNiAxNiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTYgMkwwIDhsNiA2VjJ6Ii8+PC9zdmc+');
 }
 .tail-datetime-calendar .calendar-navi span.button-next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(/src/assets/right.svg);
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgNiAxNiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTAgMTRsNi02LTYtNnYxMnoiLz48L3N2Zz4=');
 }
 .tail-datetime-calendar .calendar-navi span.button-check {
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2Ij48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTIgNWwtOCA4LTQtNCAxLjUtMS41TDQgMTBsNi41LTYuNUwxMiA1eiIvPjwvc3ZnPg==');
@@ -201,7 +173,7 @@
   tr
   > *:hover
   span {
-  border-color: #cec2c2;
+  border-color: #d0d0d0;
   box-shadow: 0 1px 0 0 #efefef;
   -webkit-box-shadow: 0 1px 0 0 #efefef;
 }
