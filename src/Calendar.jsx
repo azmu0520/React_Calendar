@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { range } from 'moment-range';
 import './calendar.css';
 export default class Calendar extends React.Component {
   weekdayshort = moment.weekdaysShort();
@@ -48,7 +47,7 @@ export default class Calendar extends React.Component {
   };
   MonthList = (props) => {
     let months = [];
-    props.data.map((data) => {
+    props.data.map((data) =>
       months.push(
         <td
           key={data}
@@ -59,13 +58,13 @@ export default class Calendar extends React.Component {
         >
           <span>{data}</span>
         </td>
-      );
-    });
+      )
+    );
     let rows = [];
     let cells = [];
 
     months.forEach((row, i) => {
-      if (i % 3 !== 0 || i == 0) {
+      if (i % 3 !== 0 || i === 0) {
         cells.push(row);
       } else {
         rows.push(cells);
@@ -131,10 +130,10 @@ export default class Calendar extends React.Component {
   onYearChange = (e) => {
     this.setYear(e.target.value);
   };
-  getDates(startDate, stopDate) {
+  getDates(startDate, stopDatep) {
     var dateArray = [];
     var currentDate = moment(startDate);
-    var stopDate = moment(stopDate);
+    var stopDate = moment(stopDatep);
     while (currentDate <= stopDate) {
       dateArray.push(moment(currentDate).format('YYYY'));
       currentDate = moment(currentDate).add(1, 'year');
@@ -147,7 +146,7 @@ export default class Calendar extends React.Component {
 
     let tenyear = this.getDates(props, nextten);
 
-    tenyear.map((data) => {
+    tenyear.map((data) =>
       months.push(
         <td
           key={data}
@@ -158,13 +157,13 @@ export default class Calendar extends React.Component {
         >
           <span>{data}</span>
         </td>
-      );
-    });
+      )
+    );
     let rows = [];
     let cells = [];
 
     months.forEach((row, i) => {
-      if (i % 3 !== 0 || i == 0) {
+      if (i % 3 !== 0 || i === 0) {
         cells.push(row);
       } else {
         rows.push(cells);
@@ -208,7 +207,7 @@ export default class Calendar extends React.Component {
     }
     let daysInMonth = [];
     for (let d = 1; d <= this.daysInMonth(); d++) {
-      let currentDay = d == this.currentDay() ? 'today' : '';
+      let currentDay = d === this.currentDay() ? 'today' : '';
       daysInMonth.push(
         <td key={d} className={`calendar-day ${currentDay}`}>
           <span
